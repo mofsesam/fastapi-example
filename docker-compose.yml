@@ -1,0 +1,9 @@
+version: '3'
+services:
+  fastapi-example:
+    build: .
+    image: mofsesam/fastapi-example:develop
+    ports:
+    - "80:80"
+    environment:
+      LOG_LEVEL: "DEBUG"
