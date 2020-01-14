@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import List
+
 from starlette.responses import StreamingResponse
 import json
 
@@ -25,19 +27,19 @@ def stream_as_json(generator_function):
 
 
 @app.post("/items/")
-async def create_item(item: Item):
-    return [item]
+async def create_item(*,items: List[Item]) -> List:
+    return items
 
 @app.get("/")
-def read_root():
+def read_root() -> List:
     return [{"Hello": "World"}]
 
 @app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
+def read_item(item_id: int, q: str = None) -> List:
     return [{"item_id": item_id, "q": q}]
 
 @app.get("/stream/items/{item_id}")
-def stream_items(item_id: int, step: int = 1):
+def stream_items(item_id: int, step: int = 1) -> List:
     return StreamingResponse(stream_as_json({f"Val{i}": i} for i in range(0,item_id,step)),
         media_type="application/json; charset=utf-8")
 
