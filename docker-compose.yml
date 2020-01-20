@@ -4,6 +4,7 @@ services:
     build: .
     image: ${DOCKER_USER}/fastapi-example:${DOCKER_TAG}
     ports:
-    - "8080:80"
+    - "8080:8080"
     environment:
       LOG_LEVEL: "DEBUG"
+      # PORT: "8080"
