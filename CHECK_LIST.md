@@ -9,7 +9,7 @@ Check
     - [ ] with api/proxy
     - [ ] use with sesamutils
         - [*] exiting when wrong environment varables
-        Comment: Endles respawn if os.exit()
+        Comment: Endles respawn if os.exit() (when set up with gunicorn)
         - [*] logging
         Comment: Not working with sesam_logger()
 

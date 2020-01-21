@@ -7,4 +7,4 @@ services:
     - "8080:8080"
     environment:
       LOG_LEVEL: "DEBUG"
-      # PORT: "8080"
+      PORT: "8080"
