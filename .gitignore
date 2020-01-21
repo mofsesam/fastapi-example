@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 tmp.json
 fastapi-example.code-workspace
+.vscode/settings.json

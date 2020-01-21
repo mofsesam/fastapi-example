@@ -163,6 +163,7 @@ TIP: The automatically constructed openapi.json file can be downloaded and used 
 #### A note on local development based on this example code
 Set environment variables with set_local_env.bat (Windows)
 Use: docker-compose [build|up|down|push]
+When running with docker-compose up, go to http://localhost:8080/docs to see the interactiv OpenAPI (Swagger) documntation of example-api.
 
 
 
