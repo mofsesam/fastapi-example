@@ -1,6 +1,18 @@
 # fastapi-example
 FastAPI in Sesam microservice - example
 
+[FastAPI](https://fastapi.tiangolo.com/) is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
+
+In the context of Sesam connectors it is natural to compare FastAPI with Flask.
+
+FastAPI is built for the purpose of building REST APIs with JSON as primary render format. This makes FastAPI code cleaner and more readable than Flask for this purpose.
+
+FastAPI is self documenting and validating. It produces APIs that are fully compatible with OpenAPI (Swagger).
+
+You are forced to think about validation early, but it is easy to to do validation.
+
+The example routings shows some basic FastAPI features in Sesam context. See the code for `main.py` for details.
+
 ### A connector demonstrating basic use of FastAPI to make a Sesam connector 
 
 #### An example of system config   
@@ -19,6 +31,8 @@ FastAPI in Sesam microservice - example
 }
 
 ```
+The PORT environment variable **must** be set and match the value set for port of microservice.  
+The LOG_LEVEL environment variable defaults to INFO if not set.
  
 #### An example of input pipe 
 ```
@@ -161,8 +175,8 @@ https://fastapi.tiangolo.com/advanced/sub-applications-proxy/
 TIP: The automatically constructed openapi.json file can be downloaded and used e.g. to make a Postman collection (must be converted from json to yaml)
 
 #### A note on local development based on this example code
-Set environment variables with set_local_env.bat (Windows)
-Use: docker-compose [build|up|down|push]
+Set environment variables with set_local_env.bat (Windows)  
+Use: docker-compose [build|up|down|push]  
 When running with docker-compose up, go to http://localhost:8080/docs to see the interactiv OpenAPI (Swagger) documntation of example-api.
 
 
