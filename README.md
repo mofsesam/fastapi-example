@@ -1,21 +1,16 @@
 # fastapi-example
+### A connector demonstrating basic use of FastAPI to make a Sesam connector 
 FastAPI in Sesam microservice - example
 
+## What is FastAPI?
 [FastAPI](https://fastapi.tiangolo.com/) is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 
-In the context of Sesam connectors it is natural to compare FastAPI with Flask.
+In the context of Sesam connectors it is natural to compare FastAPI with Flask. FastAPI is built for the purpose of building REST APIs with JSON as primary render format. This makes FastAPI code cleaner and more readable than Flask for this purpose. FastAPI is self documenting and validating. It produces APIs that are fully compatible with OpenAPI (Swagger). You are forced to think about validation early, but it is easy to to do validation.
 
-FastAPI is built for the purpose of building REST APIs with JSON as primary render format. This makes FastAPI code cleaner and more readable than Flask for this purpose.
+## Examples
+The example routings shows some basic FastAPI features in a Sesam context. See the code for `app/main.py` for details.
 
-FastAPI is self documenting and validating. It produces APIs that are fully compatible with OpenAPI (Swagger).
-
-You are forced to think about validation early, but it is easy to to do validation.
-
-The example routings shows some basic FastAPI features in Sesam context. See the code for `main.py` for details.
-
-### A connector demonstrating basic use of FastAPI to make a Sesam connector 
-
-#### An example of system config   
+#### An example of system config in Sesam node  
 ```
 {
   "_id": "fastapi-demo",
@@ -168,16 +163,14 @@ The general comments, configuration files and environment variables are applicab
 #### A note on FastAPI self documentaion and exploration
 One of the selling point of FastAPI is self documentaion and exploration. This is most useful for local development  in a Sesam connector context. 
 
-You can change local permissions to allow Anonymous "Read microservice proxy" to access microservice in a webbrowser, but the proxy nature will cause problems. See:
+You can change local permissions to allow Anonymous "Read microservice proxy" to access Sesam microservice in a webbrowser, but the proxy nature will cause problems. For hints see:
 https://github.com/sesam-community/msoft-planner
 https://fastapi.tiangolo.com/advanced/sub-applications-proxy/
-
-TIP: The automatically constructed openapi.json file can be downloaded and used e.g. to make a Postman collection (must be converted from json to yaml)
 
 #### A note on local development based on this example code
 Set environment variables with set_local_env.bat (Windows)  
 Use: docker-compose [build|up|down|push]  
-When running with docker-compose up, go to http://localhost:8080/docs to see the interactiv OpenAPI (Swagger) documntation of example-api.
+When running with docker-compose up, go to http://localhost:8080/docs to see the interactiv OpenAPI (Swagger) documntation of example-api. TIP: The automatically constructed openapi.json file can be downloaded and used e.g. to make a Postman collection (must be converted from json to yaml)
 
 
 
